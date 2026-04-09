@@ -9,8 +9,9 @@ package com.mycompany.pokedex2000;
  * @author belli
  */
 public class TelaPokedex extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPokedex.class.getName());
+    private TelaTipos tt;
 
     /**
      * Creates new form TelaPrincipal
@@ -28,12 +29,18 @@ public class TelaPokedex extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dskPainel = new javax.swing.JDesktopPane();
         jPanel2 = new javax.swing.JPanel();
         lblPokedéx2000 = new javax.swing.JLabel();
         btnTipos = new javax.swing.JButton();
         btnPokemons = new javax.swing.JButton();
         btnItens = new javax.swing.JButton();
         btnTreinadores = new javax.swing.JButton();
+        menu1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 0));
@@ -61,13 +68,13 @@ public class TelaPokedex extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnTipos)
                     .addComponent(btnPokemons, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnItens, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTreinadores, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(52, 52, 52))
+                .addGap(112, 112, 112))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblPokedéx2000, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(184, 184, 184))
         );
@@ -76,7 +83,7 @@ public class TelaPokedex extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(lblPokedéx2000)
-                .addGap(40, 40, 40)
+                .addGap(64, 64, 64)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTipos)
                     .addComponent(btnItens))
@@ -84,18 +91,49 @@ public class TelaPokedex extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPokemons)
                     .addComponent(btnTreinadores))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
+
+        dskPainel.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout dskPainelLayout = new javax.swing.GroupLayout(dskPainel);
+        dskPainel.setLayout(dskPainelLayout);
+        dskPainelLayout.setHorizontalGroup(
+            dskPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dskPainelLayout.setVerticalGroup(
+            dskPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jMenu1.setText("File");
+
+        jMenu4.setText("itens");
+        jMenu4.addActionListener(this::jMenu4ActionPerformed);
+        jMenu1.add(jMenu4);
+
+        jMenu3.setText("tiposatk");
+        jMenu1.add(jMenu3);
+
+        menu1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        menu1.add(jMenu2);
+
+        setJMenuBar(menu1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(dskPainel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(dskPainel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -104,6 +142,14 @@ public class TelaPokedex extends javax.swing.JFrame {
     private void btnTiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiposActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTiposActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        if (tt == null || tt.isClosed()) {
+            tt = new TelaTipos();
+            dskPainel.add(tt);
+            tt.setVisible(true);
+    }//GEN-LAST:event_jMenu4ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -135,7 +181,13 @@ public class TelaPokedex extends javax.swing.JFrame {
     private javax.swing.JButton btnPokemons;
     private javax.swing.JButton btnTipos;
     private javax.swing.JButton btnTreinadores;
+    private javax.swing.JDesktopPane dskPainel;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblPokedéx2000;
+    private javax.swing.JMenuBar menu1;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,6 +11,7 @@ package com.mycompany.pokedex2000;
 public class Pokedex2000 {
 
     public static void main(String[] args) {
-        System.out.println("olá treinador!");
+       TelaPokedex tp = new TelaPokedex();
+       tp.setVisible(true);
     }
 }
